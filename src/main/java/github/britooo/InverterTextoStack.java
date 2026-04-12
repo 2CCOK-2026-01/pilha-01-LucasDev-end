@@ -2,12 +2,20 @@ package github.britooo;
 
 public class InverterTextoStack {
     public static String inverter(String input) {
-        /*
-            É óbvio que não precisamos de uma pilha para resolver esse
-            problema, porém, precisamos desenvolver nosso raciocínio lógico!
+        char[] texto = input.toCharArray();
+        Integer tamanho = texto.length;
+        Pilha<Character> pilhaTexto = new Pilha(tamanho);
+        StringBuilder resposta = new StringBuilder();
 
-            Então, não fique pilhado, use a classe Pilha.
-        */
-        return null;
+        for(int i = 0; i < tamanho; i++){
+            char letraAtual = texto[i];
+            pilhaTexto.push(letraAtual);
+        }
+
+        while (!pilhaTexto.isEmpty()){
+            resposta.append(pilhaTexto.pop());
+        }
+
+        return resposta.toString();
     }
 }
